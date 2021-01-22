@@ -1,9 +1,35 @@
-<div id="loginForm"> <!-- 1 -->
-    <span>Enter your github credentials:</span>
-    <form onsubmit="event.preventDefault(); onSubmit(this);">
-        <input type="text" id="login" name="login" placeholder="Github username" required>
-        <input type="password" id="password" name="login" placeholder="Github password/token" required>
-        <input type="submit" value="Access">
-    </form>
+<html>
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+</head>
+<body>
+<div class="container">
+    <div id="loginForm">
+        <form onsubmit="event.preventDefault(); window.turnonio.onSubmit(this);">
+            <div class="mb-3">
+                <label for="username" class="form-label">Username</label>
+                <input type="text" class="form-control" id="username" placeholder="username">
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" class="form-control" id="password" placeholder="password">
+            </div>
+            <div class="mb-3">
+                <input class="btn btn-primary" type="submit" value="Access">
+            </div>
+
+        </form>
+    </div>
 </div>
-<script src="js/github.js"></script> <!-- 3 -->
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+        crossorigin="anonymous"></script>
+<script src="js/github.js"></script>
+
+</body>
+</html>
+
