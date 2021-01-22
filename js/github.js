@@ -25,11 +25,7 @@ function onSubmit(form) {
                 response.json()
                     .then(function (json) { // 5
                         const content = json.encoding === 'base64' ? atob(json.content) : json.content;
-
-                        const startIdx = content.indexOf('<body');
-                        document.body.innerHTML = content.substring(
-                            content.indexOf('>', startIdx) + 1,
-                            content.indexOf('</body>'));
+                        document.body.innerHTML = content;
                     });
             }
         });
