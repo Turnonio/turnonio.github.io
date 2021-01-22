@@ -1,6 +1,5 @@
 const org = 'Turnonio';
 const repo = 'bookmarks';
-const branch = 'master';
 
 function onSubmit(form) {
     const login = form.username || form.querySelector('#login').value;
@@ -8,7 +7,7 @@ function onSubmit(form) {
 
     const token = btoa(`${login}:${password}`);
     const request = new Request(
-        `https://api.github.com/repos/${org}/${repo}/contents/overview?ref=${branch}`,
+        `https://api.github.com/repos/${org}/${repo}/contents/src/overview.html`,
         {
             method: 'GET',
             credentials: 'omit',
@@ -27,7 +26,6 @@ function onSubmit(form) {
                     .then(function (json) { // 5
                         const content = json.encoding === 'base64' ? atob(json.content) : json.content;
 
-                        // 6
                         const startIdx = content.indexOf('<body');
                         document.body.innerHTML = content.substring(
                             content.indexOf('>', startIdx) + 1,
