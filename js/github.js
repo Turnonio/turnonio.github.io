@@ -28,7 +28,7 @@ window.turnonio = (function () {
                             document.querySelectorAll(".reload_script").forEach(scriptElm => {
                                 console.log("Append Scripts from loaded side");
                                 let newScriptElement = document.createElement("script");
-                                newScriptElement.src = scriptElm.src;
+                                newScriptElement.innerHTML = scriptElm.innerHTML;
                                 document.head.appendChild(newScriptElement);
                             });
                         });
