@@ -1,6 +1,6 @@
 <div id="loginForm"> <!-- 1 -->
     <span>Enter your github credentials:</span>
-    <form onsubmit="this.preventDefault(); onSubmit(this);">
+    <form onsubmit="event.preventDefault(); onSubmit(this);">
         <input type="text" id="login" name="login" placeholder="Github username" required>
         <input type="password" id="password" name="login" placeholder="Github password/token" required>
         <input type="submit" value="Access">
